@@ -6,4 +6,33 @@
   border-radius: 22px;
   z-index: 5;
   box-shadow: 10px 10px 30px 5px #002aff26;
+  padding: 25px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title-update-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 450px;
+}
+
+.last-updated-text {
+  text-align: end;
+  margin-right: 11px;
+}
+
+.refresh-button {
+  height: 25px;
+  width: 25px;
+}
+
+.refresh-icon {
+  height: 100%;
+  width: 100%;
 }

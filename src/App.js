@@ -9,6 +9,11 @@ function App() {
     height:'100vh', 
     width:'100vw'
   }
+
+  // var apple_date = new Date();
+  var apple_date = "asdfasdf";
+  var banana_date = new Date();
+
   return (
     
     <div 
@@ -16,8 +21,16 @@ function App() {
     >
       <div id="background"></div>
       <div id="cards-container">
-        <Card></Card>
-        <Card></Card>
+        <Card 
+          title = {"Apples"}
+          emoji = {"🍎"}
+          lastUpdated = {apple_date.toString()}
+          ></Card>
+        <Card 
+          title={"Bananas"}
+          emoji = {"🍌"}
+          lastUpdated = {banana_date.toString()}
+          ></Card>
 
       </div>
 
