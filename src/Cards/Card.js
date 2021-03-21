@@ -48,6 +48,13 @@ class Card extends React.Component {
       this.calculateOverallScore();
       this.setState(state => ({...state}));
     }
+
+    else {
+      var newState = {...this.state};
+      newState.defectRating = Math.floor(progressNew);
+      newState.date = new Date();
+      this.setState(state => ({...newState}));
+    }
   }
 
   render() {
