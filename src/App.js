@@ -24,12 +24,10 @@ function App() {
         <Card 
           title = {"Apples"}
           emoji = {"🍎"}
-          lastUpdated = {apple_date.toString()}
           ></Card>
         <Card 
           title={"Bananas"}
           emoji = {"🍌"}
-          lastUpdated = {banana_date.toString()}
           ></Card>
 
       </div>

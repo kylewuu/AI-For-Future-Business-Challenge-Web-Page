@@ -1,9 +1,14 @@
+* {
+  font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans,
+    Helvetica Neue, Arial, sans-serif;
+}
+
 .card {
   width: 735px;
   height: 405px;
   background-color: white;
   margin-top: 7vh;
-  border-radius: 22px;
+  border-radius: 22px !important;
   z-index: 5;
   box-shadow: 10px 10px 30px 5px #002aff26;
   padding: 25px;
@@ -13,6 +18,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.title-text {
+  font-size: 20px;
+  color: #707070;
+  font-weight: 700;
+}
+
+.title-emoji {
+  font-size: 20px;
 }
 
 .title-update-container {
@@ -35,4 +50,8 @@
 .refresh-icon {
   height: 100%;
   width: 100%;
+}
+
+.notes {
+  margin-top: 10px;
 }
