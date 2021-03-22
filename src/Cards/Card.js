@@ -140,7 +140,7 @@ class Card extends React.Component {
       }
   
       else {
-        this.state.notes = "Your apples are doing fine. Try to keep an eye on the overall rating on them and consume them before they go bad.";
+        this.state.notes = "Your apples are doing fine. Try to keep an eye on the overall rating and consume them before they go bad.";
       }
     }
   }
