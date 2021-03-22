@@ -35,11 +35,14 @@
   flex-direction: row;
   justify-content: flex-end;
   width: 450px;
+  align-items: center;
 }
 
 .last-updated-text {
   text-align: end;
   margin-right: 11px;
+  opacity: 0.6;
+  font-size: 12px;
 }
 
 .refresh-button {
@@ -53,5 +56,6 @@
 }
 
 .notes {
-  margin-top: 10px;
+  margin-top: 15px;
+  color: #707070;
 }
