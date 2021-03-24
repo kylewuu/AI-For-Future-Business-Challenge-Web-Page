@@ -32,6 +32,8 @@ class Card extends React.Component {
     this.calculateOverallScore();
     this.refreshOnClick();
     this.refreshOnClick = this.refreshOnClick.bind(this);
+
+    setInterval(this.refreshOnClick, 5000);
   }
 
   async refreshOnClick () {
