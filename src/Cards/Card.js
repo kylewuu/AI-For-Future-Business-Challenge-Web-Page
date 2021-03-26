@@ -17,7 +17,8 @@ class Card extends React.Component {
         defectRating: 0,
         ripenessRating: 50,
         date: new Date(),
-        notes: "N/A"
+        notes: "N/A",
+        count: 5
       }
     } else {
       this.state = {
@@ -25,7 +26,8 @@ class Card extends React.Component {
         defectRating: 0,
         ripenessRating: 4,
         date: new Date(),
-        notes: "Your bananas are not ready yet. Feel free to leave them for a bit longer before consuming them!"
+        notes: "Your bananas are not ready yet. Feel free to leave them for a bit longer before consuming them!",
+        count: 6
       }
     }
       
@@ -45,6 +47,7 @@ class Card extends React.Component {
       var newState = {...this.state};
       newState.defectRating = Math.floor(progressNew);
       newState.date = new Date();
+      newState.count = data.total_apples_count;
       this.setState(state => ({...newState}));
       this.calculateOverallScore();
       this.setState(state => ({...state}));
@@ -75,17 +78,19 @@ class Card extends React.Component {
     return (
       <div class="card">
         <div class="title-container">
-          <div><span class="title-text">{this.props.title}</span> <span class="title-emoji">{this.props.emoji}</span></div>
+          <div class="title-text-container"><span class="title-text">{this.props.title}</span> <span class="title-emoji">{this.props.emoji}</span></div>
+          
           <div class="title-update-container">
             <div class="last-updated-text">Last updated: {this.getDate()}</div>
             <div class="refresh-button" onClick={this.refreshOnClick}><img class="refresh-icon" src={refreshLogo} alt="refresh"></img></div>
           </div>
         </div>
+        <div class="count-text">Count: <span class="count-number">{this.state.count.toString()}</span></div>
   
         <ProgressBar 
           title={"Overall score"}
           marginTop={15}
-          percentageValue={this.state.overallRating.toString()}
+          percentageValue={this.state.count==0?0:this.state.overallRating.toString()}
           fontSize={20}
           fontWeight={700}
           opacity={1}
@@ -94,7 +99,7 @@ class Card extends React.Component {
         <ProgressBar 
           title={"Defects"}
           marginTop={35}
-          percentageValue={this.state.defectRating.toString()}
+          percentageValue={this.state.count==0?0:this.state.defectRating.toString()}
           fontSize={14}
           fontWeight={"normal"}
           opacity={0.4}
@@ -103,14 +108,14 @@ class Card extends React.Component {
         <ProgressBar 
           title={"Ripeness"}
           marginTop={20}
-          percentageValue={this.state.ripenessRating.toString()}
+          percentageValue={this.state.count==0?0:this.state.ripenessRating.toString()}
           fontSize={14}
           fontWeight={"normal"}
           opacity={0.4}
           ></ProgressBar>
 
         <div class="notes">
-          {this.state.notes}
+          {this.state.count==0?"No " + this.props.title.toLowerCase():this.state.notes}
         </div>
   
   
